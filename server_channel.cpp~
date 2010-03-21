@@ -1,0 +1,11 @@
+class ServerChannel{// : public iostream {
+public:
+  void write(string  message){
+    cout << message << endl;
+  };
+  string read(){
+    string temp = "";
+    cin >> temp;
+    return temp;
+  };
+};
