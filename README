@@ -9,7 +9,7 @@ class GameServer can hold many CardGame objects. Games can communicate to the cl
 ServerChannel is a stub class for now, it reads and write on the console but can be extended to add networking features to communicate with clients.
 
 Blackjack:
-Classes BJPlayer,BJDealer, Blackjack are blackjack related classes.
+Classes BJPlayer,BJDealer, Blackjack are blackjack related classes which extend Player,Player, CardGame classes respectively.
 In this implementation of blackjack each player plays against the dealer(who is added by default in the constructor). So All players play against dealer.
 
 BlackJack Rules:
