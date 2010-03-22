@@ -1,6 +1,7 @@
 #include "server.h"
 //generic server class to hold objects of type CardGame
 
+//currently hardcoded to add only blackjack by default needs to be a factory pattern to pick a type of game requested.
 void GameServer::addGame(string name, int numDecks){
   games.push_back(new BlackJack(name, numDecks, new ServerChannel()));
 };

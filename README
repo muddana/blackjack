@@ -70,4 +70,4 @@ TODO:
 
 * Right now using main.cpp as driver for the gameserver and hence all the  games . To add more players just do:
   bj.join(0, "YOURNAME HERE");
-  argument 0 is the game index running in the gameserver. right now its just one game running at index 0 in server. so we are saying bj.start(0), to start our blackjack game.
+  argument 0 is the index of game running in the gameserver. right now its just one game running at index 0 in server. so we are saying bj.start(0), to start our blackjack game.
