@@ -1,3 +1,6 @@
+Compile:
+g++ main.cpp
+
 A Simple Game of BlackJack.
 
 Built Generic classes to extend them to build more card based games:
