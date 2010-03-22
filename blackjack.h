@@ -167,6 +167,10 @@ private:
   BlackJack(string name, int numOfDecks,ServerChannel* channel);
   
   void start();
+  
+  ~BlackJack(){
+    delete _channel;
+  };
 
 };
 

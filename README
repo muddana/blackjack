@@ -1,1 +1,54 @@
 A Simple Game of BlackJack.
+
+Built Generic classes to extend them to build more card based games:
+Classes Card, CardGame, Player are generic classes.
+
+
+class GameServer can hold many CardGame objects. Games can communicate to the clients using the ServerChannel assigned by the GameServer.
+
+ServerChannel is a stub class for now, it reads and write on the console but can be extended to add networking features to communicate with clients.
+
+Blackjack:
+Classes BJPlayer,BJDealer, Blackjack are blackjack related classes.
+In this implementation of blackjack each player plays against the dealer(who is added by default in the constructor). So All players play against dealer.
+
+BlackJack Rules:
+* Cards are dealt, two per each player(including the dealer).
+* The Players play first.
+* for each player is asked to 'hit' or 'stand': 'hit' means get one more card, 'stand' means stop dealing more cards.
+  If the player gets score > 21 at anypoint goes 'Bust'. If player stands and then this its the turn of next player and this process continues for all the players.
+* At the end the dealer plays. The dealer's play is not automated right now. So someone has to play his part. I am right now playing for everybody :) since the ServerChannel is using cout and cin instead of 'networking' to communicate with clients.
+
+* At the end results are announced using these rules:
+  - If the dealer is not bust:
+       then if a player gets his count more than dealer without being bust, he wins else loses, if a player scores same as dealer he 'squares' with the dealer.
+  - If a dealer is bust:
+       All players who are bust square with dealer.
+       All players who are not bust win against dealer.
+
+score:
+* Any suit from 2-10 numbered cards count as the number on them.
+* King, Queen, Jack all count as 10.
+* Ace counts as 1 or 11 depending on if the player goes 'Bust' or not. 
+  so if the cards are as below:
+
+##########################
+suit: Diamond, type: QUEEN
+suit: Clubs, type: QUEEN
+suit: Clubs, type: ACE
+##########################
+ your score is: 21
+
+The Ace is counted as 1.
+
+##########################
+suit: Clubs, type: QUEEN
+suit: Clubs, type: ACE
+##########################
+ your score is: 21
+
+The Ace is counted as 11.
+
+
+TODO:
+* Modify ServerChannel to see if i can get 'real clients' connecting to server and join. Need to implement networking and come up with a protocol for communicating with induvidual clients to get client responses back to the game.
