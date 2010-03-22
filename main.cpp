@@ -19,7 +19,8 @@ int main(){
   
   GameServer bj;
   bj.addGame("ultimate blackjack", 2);
-  bj.join(0, "muddana");
+  bj.join(0, "stranger");
+  bj.join(0, "diana");
   bj.startGame(0);
   //bj.begin();
   // Game poker = new Game("texas holdem"); this is illegal coz of the pure virtual keyword

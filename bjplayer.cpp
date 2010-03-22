@@ -13,6 +13,14 @@ bool BJPlayer::isBust(){
   else
     return false;
 };
+
+bool BJPlayer::isBlackjack(){
+  if(21 == score())
+    return true;
+  else
+    return false;
+};
+
 int BJPlayer::score(){
   vector<Card *>::iterator it;
   int score = 0;

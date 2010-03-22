@@ -55,10 +55,16 @@ private:
 	broadcast(objPlayer->name() + " goes for another card");
 	  dealCard();
 	  if(objPlayer->isBust()){
-	    broadcast(objPlayer->name() + " score is: " + iToS(objPlayer->score()));
-	    broadcast(objPlayer->name() + " is Bust, loses anyways!");
+	    broadcast(objPlayer->name() + " your Cards are: "+ objPlayer->prettyPrintCards() +" your score is: " + iToS(objPlayer->score()));
+	    broadcast(objPlayer->name() + " is Bust");
 	    break;
-	  }
+	  };
+	  if(objPlayer->isBlackjack()){
+	    broadcast(objPlayer->name() + " your Cards are: "+ objPlayer->prettyPrintCards() +" your score is: " + iToS(objPlayer->score()));
+	    broadcast(objPlayer->name() + " got a BLACKJACK!");
+	    break;
+	  };
+	  
       }
       else if(BlackJack::STAND == action){
 	broadcast(objPlayer->name() + " stands , score is " + iToS(objPlayer->score()));

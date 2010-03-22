@@ -1,10 +1,13 @@
+A Naive version of BlackJack.
+_____________________________
+
 Compile:
 g++ main.cpp
 
-A Simple Game of BlackJack.
+_____________________________
 
-Built Generic classes to extend them to build more card based games:
-Classes Card, CardGame, Player are generic classes.
+
+Classes Card, CardGame, Player are generic classes to extend them to build more card based games:
 
 
 class GameServer can hold many CardGame objects. Games can communicate to the clients using the ServerChannel assigned by the GameServer.
@@ -13,6 +16,10 @@ ServerChannel is a stub class for now, it reads and write on the console but can
 
 Blackjack:
 Classes BJPlayer,BJDealer, Blackjack are blackjack related classes which extend Player,Player, CardGame classes respectively.
+
+_____________________________
+
+
 In this implementation of blackjack each player plays against the dealer(who is added by default in the constructor). So All players play against dealer.
 
 BlackJack Rules:
@@ -53,5 +60,14 @@ suit: Clubs, type: ACE
 The Ace is counted as 11.
 
 
+_____________________________
+
+
 TODO:
 * Modify ServerChannel to see if i can get 'real clients' connecting to server and join. Need to implement networking and come up with a protocol for communicating with induvidual clients to get client responses back to the game.
+
+* Server is not threaded so cannot run more than one game at a time.
+
+* Right now using main.cpp as driver for the gameserver and hence all the  games . To add more players just do:
+  bj.join(0, "YOURNAME HERE");
+  argument 0 is the game index running in the gameserver. right now its just one game running at index 0 in server. so we are saying bj.start(0), to start our blackjack game.
