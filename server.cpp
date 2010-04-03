@@ -24,3 +24,11 @@ void GameServer::startGame(int typeOfGame){
 GameServer::GameServer() : clientCount(0){
 };
 
+Player* GameServer::getPlayer(int typeOfGame, string name){
+  switch(typeOfGame){
+  case 0:
+    return new BJPlayer(clientCount, name);
+  default:
+    throw "unknown game type";
+  };
+};

@@ -14,12 +14,6 @@ private:
   int clientCount;
   vector<CardGame *> games;
   //each game at particular index is of the following type, bad design need to be modified
-  Player* getPlayer(int typeOfGame, string name){
-    switch(typeOfGame){
-    case 0:
-      return new BJPlayer(clientCount, name);
-    default:
-      throw "unknown game type";
-    };
-  }
+  Player* getPlayer(int typeOfGame, string name);
+
 };

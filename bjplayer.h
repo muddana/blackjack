@@ -4,15 +4,9 @@ public:
   int id() const;
   bool isBust();
   bool isBlackjack();
-  int score();
+  int score();     ;
 private:
-  int reAdjustScore(int score, int numAces){
-    while(score > 21 && numAces >0 ){
-      score -= 10;
-      numAces--;
-    }
-    return score;
-  };
+  int reAdjustScore(int score, int numAces);
   int _finalScore;
   int _id;
 };

@@ -2,7 +2,8 @@
 
 Player::Player(string name) : _name(name){
 };
-void Player::notify(string message){
+//VERIFY
+void Player::notify(const string message){
   messages.push(message);
 };
 int Player::money() const{

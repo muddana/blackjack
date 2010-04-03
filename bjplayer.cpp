@@ -8,17 +8,11 @@ int BJPlayer::id() const{
   return _id;
 };
 bool BJPlayer::isBust(){
-  if(score() > 21)
-    return true;
-  else
-    return false;
+  return (score() > 21);
 };
 
 bool BJPlayer::isBlackjack(){
-  if(21 == score())
-    return true;
-  else
-    return false;
+  return (21 == score());
 };
 
 int BJPlayer::score(){
@@ -42,3 +36,11 @@ int BJPlayer::score(){
     return score;
 };
 
+//privates
+int BJPlayer::reAdjustScore(int score, int numAces){
+  while(score > 21 && numAces >0 ){
+    score -= 10;
+    numAces--;
+  }
+  return score;
+};

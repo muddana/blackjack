@@ -1,7 +1,7 @@
 class Player{
 public:
   Player(string name);
-  void notify(string message);
+  void notify(const string message);
   int money() const;
   string name() const;    
   string prettyPrintCards();
